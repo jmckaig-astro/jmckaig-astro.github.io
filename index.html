@@ -5,11 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jeffrey McKaig — Astrophysicist</title>
 <meta name="description" content="Jeffrey McKaig, NASA Postdoctoral Program Fellow at NASA Goddard Space Flight Center, studying accretion and emission-line physics in active galactic nuclei.">
-<meta name="theme-color" content="#0D0E14">
+<meta name="theme-color" content="#0D0E14" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FBFAFD" media="(prefers-color-scheme: light)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>
+/* Set the theme before first paint so there is no flash of the wrong one. */
+(function(){var t;try{t=localStorage.getItem('theme');}catch(e){}
+if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}
+document.documentElement.setAttribute('data-theme',t);})();
+</script>
+<script src="theme.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -24,6 +32,15 @@
       <li><a href="models.html">Models</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+      <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2"/>
+        <path d="M12 2.6v2.2M12 19.2v2.2M4.4 4.4l1.6 1.6M18 18l1.6 1.6M2.6 12h2.2M19.2 12h2.2M4.4 19.6l1.6-1.6M18 6l1.6-1.6"/>
+      </svg>
+      <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20.4 14.3A8.5 8.5 0 1 1 9.7 3.6a6.8 6.8 0 0 0 10.7 10.7Z"/>
+      </svg>
+    </button>
   </div>
 </nav>
 
@@ -47,9 +64,9 @@
            aria-label="Schematic rest-frame spectrum of a broad-line active galactic nucleus: a declining continuum with broad Lyman alpha, carbon four, carbon three and magnesium two emission lines, and a narrow oxygen three spike beside hydrogen beta.">
         <defs>
           <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%"   stop-color="#8D46E7"/>
-            <stop offset="55%"  stop-color="#D9479F"/>
-            <stop offset="100%" stop-color="#FF7D54"/>
+            <stop offset="0%"   stop-color="var(--grad-a)"/>
+            <stop offset="55%"  stop-color="var(--grad-b)"/>
+            <stop offset="100%" stop-color="var(--grad-c)"/>
           </linearGradient>
         </defs>
         <path class="trace" d="M 0,116
