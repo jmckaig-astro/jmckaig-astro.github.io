@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Models — Jeffrey McKaig</title>
+<meta name="description" content="CLOUDY photoionization model grids for the AGN broad line region and narrow line region, developed by Jeffrey McKaig for public release.">
+<meta name="theme-color" content="#0D0E14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="wordmark" href="index.html">Jeffrey McKaig</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="cv.html">CV &amp; Publications</a></li>
+      <li><a href="models.html" class="is-current" aria-current="page">Models</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+
+  <div class="wrap">
+    <div class="pagehead">
+      <p class="eyebrow">Models</p>
+      <h1 class="pagetitle">CLOUDY grids, <span class="grad">openly released</span></h1>
+      <p class="lede">Two photoionization grids in preparation — one for the broad line region, one for the narrow and coronal line gas. Both are built so the assumptions are visible and the outputs interpolate directly against measured line ratios.</p>
+      <p class="dim">Each grid will be released with the paper that uses it, archived on Zenodo with a citable DOI, and mirrored on GitHub with the input scripts and reader utilities. For early access on a specific application, <a href="contact.html" style="border-bottom:1px solid var(--border-hi)">get in touch</a>.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section>
+      <p class="eyebrow">Broad line region</p>
+      <h2 class="section">Radiation-pressure-<span class="grad">confined</span> grid</h2>
+      <span class="pill"><span class="dot"></span> In development</span>
+
+      <p>A grid of radiation-pressure-confined BLR clouds, built to test which ultraviolet line ratios carry genuine metallicity information once confinement is treated self-consistently. Under RPC the internal density structure of a cloud is set by the incident radiation field rather than imposed by hand, which fixes the ionization parameter near its observed near-universal value and changes which diagnostics remain degenerate.</p>
+
+      <p>The grid targets the ratios most often used to infer BLR abundances — N&thinsp;V/C&thinsp;IV, (Si&thinsp;IV+O&thinsp;IV])/C&thinsp;IV, N&thinsp;V/He&thinsp;II, C&thinsp;III]/C&thinsp;IV among them — with the ionizing continuum shape varied explicitly rather than held fixed.</p>
+
+      <div class="card" style="margin-top:1.5rem">
+        <table class="spec">
+          <tbody>
+            <tr><th>Code</th><td><code>CLOUDY [version]</code></td></tr>
+            <tr><th>Geometry</th><td>Radiation-pressure-confined slab, [open / closed]</td></tr>
+            <tr><th>Metallicity</th><td><code>[range] Z&#9737;</code>, [n] steps</td></tr>
+            <tr><th>Density at illuminated face</th><td><code>log n_H = [range] cm&#8315;&#179;</code></td></tr>
+            <tr><th>Ionizing flux</th><td><code>log &#934;(H) = [range] cm&#8315;&#178; s&#8315;&#185;</code></td></tr>
+            <tr><th>Continuum</th><td>[SED family and parameters varied]</td></tr>
+            <tr><th>Abundance pattern</th><td>[scaled solar / secondary N / other]</td></tr>
+            <tr><th>Output</th><td>Line luminosities and equivalent widths, [n] transitions</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="fine" style="margin-top:1rem">Planned release alongside [paper reference]. Fill in the bracketed values once the grid is frozen — a reader should be able to decide whether it covers their object without downloading it.</p>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section class="tight">
+      <p class="eyebrow">Narrow line region</p>
+      <h2 class="section">Coronal lines with <span class="grad">dust physics</span></h2>
+      <span class="pill"><span class="dot"></span> In development</span>
+
+      <p>A companion grid for the narrow line region, extending the dusty photoionization models I used to explain why optical coronal lines are so much fainter in observed AGN than dust-free calculations predict. Depletion of refractory elements onto grains and absorption of ionizing photons by dust together suppress coronal line luminosities by up to three orders of magnitude, so grain physics is a grid parameter rather than a fixed background assumption.</p>
+
+      <p>The current extension targets low-metallicity environments, where standard strong-line calibrations are least reliable and where coronal lines are being used to search for accreting black holes in dwarf galaxies.</p>
+
+      <div class="card" style="margin-top:1.5rem">
+        <table class="spec">
+          <tbody>
+            <tr><th>Code</th><td><code>CLOUDY [version]</code></td></tr>
+            <tr><th>Metallicity</th><td><code>[range] Z&#9737;</code>, including the low-metallicity regime</td></tr>
+            <tr><th>Hydrogen density</th><td><code>log n_H = [range] cm&#8315;&#179;</code></td></tr>
+            <tr><th>Ionization parameter</th><td><code>log U = [range]</code></td></tr>
+            <tr><th>Dust treatment</th><td>Dust-free and depleted, [grain type], depletion factor [range]</td></tr>
+            <tr><th>Continuum</th><td>[SED family, &#945;_OX range]</td></tr>
+            <tr><th>Output</th><td>Coronal, high-ionization, and strong optical lines, [n] transitions</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="fine" style="margin-top:1rem">Builds on <a class="paperlink" href="https://doi.org/10.3847/1538-4357/ad7a79">McKaig et al. 2024, ApJ 976, 130</a></p>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section class="tight">
+      <p class="eyebrow">Using the grids</p>
+      <h2 class="section">What ships with each release</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Inputs</h3>
+          <p>The CLOUDY input scripts and the driver used to generate the grid, so the calculation can be reproduced or extended.</p>
+        </div>
+        <div class="card">
+          <h3>Tables</h3>
+          <p>Raw output plus a tabulated line list in [FITS / HDF5], indexed by the grid axes.</p>
+        </div>
+        <div class="card">
+          <h3>Reader</h3>
+          <p>A short Python module for interpolating line ratios across the grid, with worked examples.</p>
+        </div>
+      </div>
+      <p style="margin-top:1.5rem"><span class="chip"><span class="prompt">$</span> pip install [package-name]</span></p>
+      <p class="fine">[State your license here — CC-BY 4.0 with a request for citation is the usual choice.] Delete this whole page until there is something to download; an empty promise on a public page is worse than no page.</p>
+
+      <p class="note">I drafted both grid descriptions from your published coronal-line work and the RPC modeling you have described, but every parameter range is a placeholder. Fill them from the actual grid definitions before release, and cut anything you are not committed to publishing.</p>
+    </section>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Jeffrey McKaig — last updated [Month Year].</p>
+    <p><a href="contact.html">Contact</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jeffrey McKaig — Astrophysicist</title>
+<meta name="description" content="Jeffrey McKaig, NASA Postdoctoral Program Fellow at NASA Goddard Space Flight Center, studying accretion and emission-line physics in active galactic nuclei.">
+<meta name="theme-color" content="#0D0E14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="wordmark" href="index.html">Jeffrey McKaig</a>
+    <ul>
+      <li><a href="index.html" class="is-current" aria-current="page">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="cv.html">CV &amp; Publications</a></li>
+      <li><a href="models.html">Models</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge"><span class="dot"></span> NASA Postdoctoral Program Fellow at NASA Goddard</span>
+      <h1 class="display">Reading the gas around <span class="grad">supermassive black holes</span></h1>
+      <p class="sub">I build the photoionization and radiative transfer models that turn a measured emission line into a statement about metallicity, density, and the accretion flow underneath.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="research.html">Explore the research</a>
+        <a class="btn btn-ghost" href="cv.html">Publications</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="figure">
+      <svg class="spectrum" viewBox="0 0 1000 200" role="img"
+           aria-label="Schematic rest-frame spectrum of a broad-line active galactic nucleus: a declining continuum with broad Lyman alpha, carbon four, carbon three and magnesium two emission lines, and a narrow oxygen three spike beside hydrogen beta.">
+        <defs>
+          <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%"   stop-color="#8D46E7"/>
+            <stop offset="55%"  stop-color="#D9479F"/>
+            <stop offset="100%" stop-color="#FF7D54"/>
+          </linearGradient>
+        </defs>
+        <path class="trace" d="M 0,116
+          C 40,117 70,118 88,119
+          C 98,119 102,70 109,52
+          C 116,70 120,119 130,121
+          L 215,124
+          C 228,125 234,74 245,58
+          C 256,74 262,125 275,127
+          L 335,129
+          C 348,130 354,96 361,87
+          C 368,96 374,130 387,131
+          L 548,136
+          C 562,137 566,89 574,77
+          C 582,89 586,137 600,138
+          L 858,144
+          C 870,145 876,101 883,93
+          C 888,101 891,143 895,144
+          L 897,144 L 899,64 L 901,144
+          L 1000,147" />
+        <text class="lbl" x="109" y="40" text-anchor="middle">Ly&#945;</text>
+        <text class="lbl" x="245" y="46" text-anchor="middle">C&#8202;IV</text>
+        <text class="lbl" x="361" y="75" text-anchor="middle">C&#8202;III]</text>
+        <text class="lbl" x="574" y="65" text-anchor="middle">Mg&#8202;II</text>
+        <text class="lbl" x="883" y="81" text-anchor="middle">H&#946;</text>
+        <line class="axis" x1="0" y1="172" x2="1000" y2="172" />
+        <text class="edge" x="0" y="192">1000 &#197;</text>
+        <text class="edge" x="1000" y="192" text-anchor="end">6000 &#197;</text>
+      </svg>
+      <p class="figcap">Schematic rest-frame spectrum of a broad-line AGN. Every diagnostic I work on lives somewhere on this curve.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section>
+      <p class="eyebrow">About</p>
+      <h2 class="section">Between the <span class="grad">model grid</span> and the telescope</h2>
+      <p class="lede">I study how gas near supermassive black holes is heated, ionized, and obscured — and what its emission reveals about the accretion flow underneath.</p>
+      <p>I am currently a NASA Postdoctoral Program Fellow in the X-ray Astrophysics Laboratory at NASA Goddard Space Flight Center, developing new ultraviolet metallicity diagnostics for broad-line AGN by combining radiation-pressure-confined photoionization models with archival spectroscopy.</p>
+      <p>I completed my Ph.D. at George Mason University with the Black Hole &ndash; Galaxy Connection group, working on ray-tracing simulations of the circumnuclear medium and photoionization models of AGN coronal line emission. Before that I earned a B.S. in applied physics and applied mathematics from Christopher Newport University.</p>
+      <p class="fine">[Optional: a sentence about what you want to work on next, or an invitation to get in touch about collaborations. Delete if you would rather keep this short.]</p>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section class="tight">
+      <p class="eyebrow">What I do</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Photoionization modeling</h3>
+          <p>Large CLOUDY grids for the broad, narrow, and coronal line gas — built so the assumptions are visible and the outputs interpolate directly against measured line ratios.</p>
+          <a class="paperlink" href="models.html">See the grids</a>
+        </div>
+        <div class="card">
+          <h3>Radiative transfer</h3>
+          <p>Monte Carlo and ray-tracing simulations of the circumnuclear medium, used to predict how obscuring geometry imprints itself on the X-ray spectrum.</p>
+          <a class="paperlink" href="https://doi.org/10.1093/mnras/stab3178">MNRAS 512, 2961</a>
+        </div>
+        <div class="card">
+          <h3>Spectroscopy</h3>
+          <p>Working with JWST and SDSS spectra, X-ray data from XMM-Newton and Chandra, and near-infrared observations from Keck to test those models against real sources.</p>
+          <a class="paperlink" href="research.html">Research areas</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section class="tight">
+      <p class="eyebrow">Get in touch</p>
+      <h2 class="section">Questions about the models or the papers?</h2>
+      <p class="dim">Email is the best way to reach me.</p>
+      <p><span class="chip"><span class="prompt">&#9993;</span> jeffrey.mckaig.astro@gmail.com</span></p>
+    </section>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Jeffrey McKaig — last updated [Month Year].</p>
+    <p><a href="contact.html">Contact</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
