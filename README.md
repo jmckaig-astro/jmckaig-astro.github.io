@@ -1,2 +1,2 @@
 # jmckaig-astro.github.io
-super cool personal website 
+Jeffrey McKaig's personal website 
