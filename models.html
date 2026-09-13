@@ -5,11 +5,64 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Models — Jeffrey McKaig</title>
 <meta name="description" content="CLOUDY photoionization model grids for the AGN broad line region and narrow line region, developed by Jeffrey McKaig for public release.">
-<meta name="theme-color" content="#0D0E14">
+<meta name="theme-color" content="#0D0E14" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FBFAFD" media="(prefers-color-scheme: light)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>
+/* Theme handling. Self-contained on purpose: no external file to forget
+   when uploading, and no extra request that can 404. The first lines run
+   before anything paints, so the page never flashes the wrong theme. */
+(function () {
+  var root = document.documentElement;
+
+  function stored() {
+    try { return localStorage.getItem('theme'); } catch (e) { return null; }
+  }
+
+  var saved = stored();
+  root.setAttribute('data-theme',
+    (saved === 'light' || saved === 'dark') ? saved
+      : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));
+
+  function describe() {
+    var button = document.querySelector('[data-theme-toggle]');
+    if (!button) return;
+    var isDark = root.getAttribute('data-theme') === 'dark';
+    button.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+    button.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+  }
+
+  function apply(theme, remember) {
+    root.setAttribute('data-theme', theme);
+    if (remember) {
+      try { localStorage.setItem('theme', theme); } catch (e) {}
+    }
+    describe();
+  }
+
+  /* Delegated, so it works no matter when the button enters the DOM. */
+  document.addEventListener('click', function (event) {
+    var target = event.target;
+    if (!target || !target.closest) return;
+    if (target.closest('[data-theme-toggle]')) {
+      apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark', true);
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', describe);
+
+  /* Keep following the operating system until the visitor chooses. */
+  var query = window.matchMedia('(prefers-color-scheme: light)');
+  function followSystem(event) {
+    if (!stored()) apply(event.matches ? 'light' : 'dark', false);
+  }
+  if (query.addEventListener) query.addEventListener('change', followSystem);
+  else if (query.addListener) query.addListener(followSystem);
+})();
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -24,6 +77,11 @@
       <li><a href="models.html" class="is-current" aria-current="page">Models</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20.4 14.3A8.5 8.5 0 1 1 9.7 3.6a6.8 6.8 0 0 0 10.7 10.7Z"/>
+      </svg>
+    </button>
   </div>
 </nav>
 
