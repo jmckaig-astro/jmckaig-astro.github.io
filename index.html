@@ -1,156 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jeffrey McKaig — Astrophysicist</title>
-<meta name="description" content="Jeffrey McKaig, NASA Postdoctoral Program Fellow at NASA Goddard Space Flight Center, studying accretion and emission-line physics in active galactic nuclei.">
-<meta name="theme-color" content="#0D0E14" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#FBFAFD" media="(prefers-color-scheme: light)">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script>
-/* Theme handling. Self-contained on purpose: no external file to forget
-   when uploading, and no extra request that can 404. The first lines run
-   before anything paints, so the page never flashes the wrong theme. */
-(function () {
-  var root = document.documentElement;
-
-  function stored() {
-    try { return localStorage.getItem('theme'); } catch (e) { return null; }
-  }
-
-  var saved = stored();
-  root.setAttribute('data-theme',
-    (saved === 'light' || saved === 'dark') ? saved
-      : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));
-
-  function describe() {
-    var button = document.querySelector('[data-theme-toggle]');
-    if (!button) return;
-    var isDark = root.getAttribute('data-theme') === 'dark';
-    button.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
-    button.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-  }
-
-  function apply(theme, remember) {
-    root.setAttribute('data-theme', theme);
-    if (remember) {
-      try { localStorage.setItem('theme', theme); } catch (e) {}
-    }
-    describe();
-  }
-
-  /* Delegated, so it works no matter when the button enters the DOM. */
-  document.addEventListener('click', function (event) {
-    var target = event.target;
-    if (!target || !target.closest) return;
-    if (target.closest('[data-theme-toggle]')) {
-      apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark', true);
-    }
-  });
-
-  document.addEventListener('DOMContentLoaded', describe);
-
-  /* Keep following the operating system until the visitor chooses. */
-  var query = window.matchMedia('(prefers-color-scheme: light)');
-  function followSystem(event) {
-    if (!stored()) apply(event.matches ? 'light' : 'dark', false);
-  }
-  if (query.addEventListener) query.addEventListener('change', followSystem);
-  else if (query.addListener) query.addListener(followSystem);
-})();
-</script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Description" content="Jeffrey McKaig, NASA Postdoctoral Program Fellow at NASA Goddard Space Flight Center, studying accretion and emission-line physics in active galactic nuclei.">
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; color: #0000e9; -webkit-text-stroke: #0000e9}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p4 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p7 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; color: #0000e9; -webkit-text-stroke: #0000e9}
+    li.li1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; color: #0000e9; -webkit-text-stroke: #0000e9}
+    span.s1 {text-decoration: underline ; font-kerning: none}
+    span.s2 {-webkit-text-stroke: 0px #000000}
+    span.s3 {font-kerning: none}
+    span.s4 {font-kerning: none; color: #000000; -webkit-text-stroke: 0px #000000}
+    span.s5 {text-decoration: underline ; font-kerning: none; -webkit-text-stroke: 0px #0000e9}
+    span.s6 {font: 12.0px Menlo; font-kerning: none}
+    ul.ul1 {list-style-type: disc}
+  </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-
-<nav class="nav" aria-label="Primary">
-  <div class="nav-inner">
-    <a class="wordmark" href="index.html">Jeffrey McKaig</a>
-    <ul>
-      <li><a href="index.html" class="is-current" aria-current="page">Home</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="cv.html">CV &amp; Publications</a></li>
-      <li><a href="models.html">Models</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M20.4 14.3A8.5 8.5 0 1 1 9.7 3.6a6.8 6.8 0 0 0 10.7 10.7Z"/>
-      </svg>
-    </button>
-  </div>
-</nav>
-
-<main id="main">
-
-  <div class="wrap">
-    <div class="hero">
-      <span class="badge"><span class="dot"></span> NASA Postdoctoral Program Fellow at NASA Goddard</span>
-      <h1 class="display">Reading the gas around <span class="grad">supermassive black holes</span></h1>
-      <p class="sub">I build the photoionization and radiative transfer models that turn a measured emission line into a statement about metallicity, density, and the accretion flow underneath.</p>
-      <div class="actions">
-        <a class="btn btn-primary" href="research.html">Explore the research</a>
-        <a class="btn btn-ghost" href="cv.html">Publications</a>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="wrap">
-    <section>
-      <p class="eyebrow">About</p>
-      <h2 class="section">Between the <span class="grad">model grid</span> and the telescope</h2>
-      <p class="lede">I study how gas near supermassive black holes is heated, ionized, and obscured — and what its emission reveals about the accretion flow underneath.</p>
-      <p>I am currently a NASA Postdoctoral Program Fellow in the X-ray Astrophysics Laboratory at NASA Goddard Space Flight Center, developing new ultraviolet metallicity diagnostics for broad-line AGN by combining radiation-pressure-confined photoionization models with archival spectroscopy.</p>
-      <p>I completed my Ph.D. at George Mason University with the Black Hole &ndash; Galaxy Connection group, working on ray-tracing simulations of the circumnuclear medium and photoionization models of AGN coronal line emission. Before that I earned a B.S. in applied physics and applied mathematics from Christopher Newport University.</p>
-      <p class="fine">[Optional: a sentence about what you want to work on next, or an invitation to get in touch about collaborations. Delete if you would rather keep this short.]</p>
-    </section>
-  </div>
-
-  <div class="wrap">
-    <section class="tight">
-      <p class="eyebrow">What I do</p>
-      <div class="grid">
-        <div class="card">
-          <h3>Photoionization modeling</h3>
-          <p>Large CLOUDY grids for the broad, narrow, and coronal line gas — built so the assumptions are visible and the outputs interpolate directly against measured line ratios.</p>
-          <a class="paperlink" href="models.html">See the grids</a>
-        </div>
-        <div class="card">
-          <h3>Radiative transfer</h3>
-          <p>Monte Carlo and ray-tracing simulations of the circumnuclear medium, used to predict how obscuring geometry imprints itself on the X-ray spectrum.</p>
-          <a class="paperlink" href="https://doi.org/10.1093/mnras/stab3178">MNRAS 512, 2961</a>
-        </div>
-        <div class="card">
-          <h3>Spectroscopy</h3>
-          <p>Working with JWST and SDSS spectra, X-ray data from XMM-Newton and Chandra, and near-infrared observations from Keck to test those models against real sources.</p>
-          <a class="paperlink" href="research.html">Research areas</a>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <div class="wrap">
-    <section class="tight">
-      <p class="eyebrow">Get in touch</p>
-      <h2 class="section">Questions about the models or the papers?</h2>
-      <p class="dim">Email is the best way to reach me.</p>
-      <p><span class="chip"><span class="prompt">&#9993;</span> jeffrey.mckaig.astro@gmail.com</span></p>
-    </section>
-  </div>
-
-</main>
-
-<footer>
-  <div class="wrap">
-    <p>Jeffrey McKaig — last updated [Month Year].</p>
-    <p><a href="contact.html">Contact</a></p>
-  </div>
-</footer>
-
+<p class="p1"><span class="s1">Skip to content</span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/jeffreymckaig/Documents/website/index.html">Jeffrey McKaig</a></span></p>
+<ul class="ul1">
+  <li class="li1"><span class="s2"><a href="file:///Users/jeffreymckaig/Documents/website/index.html"><span class="s1">Home</span></a></span></li>
+  <li class="li1"><span class="s2"><a href="file:///Users/jeffreymckaig/Documents/website/research.html"><span class="s1">Research</span></a></span></li>
+  <li class="li1"><span class="s2"><a href="file:///Users/jeffreymckaig/Documents/website/cv.html"><span class="s1">CV &amp; Publications</span></a></span></li>
+  <li class="li1"><span class="s2"><a href="file:///Users/jeffreymckaig/Documents/website/models.html"><span class="s1">Models</span></a></span></li>
+  <li class="li1"><span class="s2"><a href="file:///Users/jeffreymckaig/Documents/website/contact.html"><span class="s1">Contact</span></a></span></li>
+</ul>
+<p class="p2"><span class="s3">NASA Postdoctoral Program Fellow at NASA Goddard Space Flight Center</span></p>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; -webkit-text-stroke: #000000"><span class="s3"><b>Hello, I am Jeffrey McKaig and I study growing supermassive black holes at the centers of galaxies</b></span></h1>
+<p class="p4"><span class="s3">&lt;!—I build photoionization and radiative transfer models that try to understand the distribution, metallicity, and ionization state of gas surrounding supermassive black holes and the accretion flow feeding them.—&gt;</span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/jeffreymckaig/Documents/website/research.html">Explore the research</a></span><span class="s4"> <a href="file:///Users/jeffreymckaig/Documents/website/cv.html"><span class="s5">Publications</span></a></span></p>
+<p class="p4"><span class="s3">About</span></p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; -webkit-text-stroke: #000000"><span class="s3"><b>Introduction</b></span></h2>
+<p class="p4"><span class="s3">I study how gas near supermassive black holes is heated, ionized, and obscures the central accretion disk — and what its emission reveals about the accretion flow underneath.</span></p>
+<p class="p4"><span class="s3">I am currently a NASA Postdoctoral Program Fellow in the X-ray Astrophysics Laboratory at NASA Goddard Space Flight Center, developing new ultraviolet metallicity diagnostics for broad-line AGN by combining radiation-pressure-confined photoionization models with archival spectroscopy.</span></p>
+<p class="p4"><span class="s3">I completed my Ph.D. at George Mason University with the Black Hole – Galaxy Connection group, working on ray-tracing simulations of the circumnuclear medium and photoionization models of AGN coronal line emission. Before that I earned a B.S. in applied physics and applied mathematics from Christopher Newport University.</span></p>
+<p class="p4"><span class="s3">[Optional: a sentence about what you want to work on next, or an invitation to get in touch about collaborations. Delete if you would rather keep this short.]</span></p>
+<p class="p4"><span class="s3">What I do</span></p>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times; -webkit-text-stroke: #000000"><span class="s3"><b>Photoionization modeling</b></span></h3>
+<p class="p4"><span class="s3">Large CLOUDY grids for the broad, narrow, and coronal line gas — built so the assumptions are visible and the outputs interpolate directly against measured line ratios.</span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/jeffreymckaig/Documents/website/models.html">See the grids</a></span></p>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times; -webkit-text-stroke: #000000"><span class="s3"><b>Radiative transfer</b></span></h3>
+<p class="p4"><span class="s3">Monte Carlo and ray-tracing simulations of the circumnuclear medium, used to predict how obscuring geometry imprints itself on the X-ray spectrum.</span></p>
+<p class="p1"><span class="s1"><a href="https://doi.org/10.1093/mnras/stab3178">MNRAS 512, 2961</a></span></p>
+<h3 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 14.0px Times; -webkit-text-stroke: #000000"><span class="s3"><b>Spectroscopy</b></span></h3>
+<p class="p4"><span class="s3">Working with JWST and SDSS spectra, X-ray data from XMM-Newton and Chandra, and near-infrared observations from Keck to test those models against real sources.</span></p>
+<p class="p1"><span class="s1"><a href="file:///Users/jeffreymckaig/Documents/website/research.html">Research areas</a></span></p>
+<p class="p4"><span class="s3">Get in touch</span></p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; -webkit-text-stroke: #000000"><span class="s3"><b>Questions about the models or the papers?</b></span></h2>
+<p class="p4"><span class="s3">Email is the best way to reach me.</span></p>
+<p class="p4"><span class="s6">✉</span><span class="s3"> jeffrey.mckaig.astro@gmail.com</span></p>
+<p class="p4"><span class="s3">Jeffrey McKaig — last updated [Month Year].</span></p>
+<p class="p7"><span class="s1"><a href="file:///Users/jeffreymckaig/Documents/website/contact.html">Contact</a></span></p>
 </body>
 </html>
